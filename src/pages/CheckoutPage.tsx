@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { ArrowLeft, Check, CreditCard, Lock, ShieldCheck } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { Button } from '../components/ui'
+import { artist } from '../data/artist'
 import { money } from '../lib/format'
 import { payments, shippingMethods, type CustomerDetails, type ShippingMethod } from '../lib/payments'
 import { navigate } from '../lib/router'
@@ -24,7 +25,7 @@ export function CheckoutPage() {
 
   useEffect(() => window.scrollTo(0, 0), [step])
   useEffect(() => {
-    document.title = 'Checkout — Elena Ravel'
+    document.title = `Checkout — ${artist.name}`
   }, [])
 
   const hasOriginal = lines.some((l) => l.variant === 'original')
@@ -353,7 +354,7 @@ function Confirmation({ order, email }: { order: { id: string; lines: { art: { i
           It’s <span className="italic">yours.</span>
         </h1>
         <p className="mx-auto mt-6 max-w-md text-ink-soft">
-          Thank you for collecting. A confirmation would be sent to <span className="text-ink">{email}</span>, and Elena will be in touch personally about delivery.
+          Thank you for collecting. A confirmation would be sent to <span className="text-ink">{email}</span>, and {artist.firstName} will be in touch personally about delivery.
         </p>
         <p className="mt-3 text-[0.75rem] text-mute">Demo mode: no payment was taken and no email was sent.</p>
         <p className="mt-8 text-lg tabular-nums">Total {money(order.total)}</p>

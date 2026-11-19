@@ -4,6 +4,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 import { ArtworkCard } from '../components/ArtworkCard'
 import { FramedArtwork } from '../components/FramedArtwork'
 import { AvailabilityDot, Button } from '../components/ui'
+import { artist } from '../data/artist'
 import { artworks, getArtwork, relatedTo, type Artwork } from '../data/artworks'
 import { dims, money } from '../lib/format'
 import { useEscape, useScrollLock } from '../lib/hooks'
@@ -14,9 +15,9 @@ export function ArtworkPage({ slug }: { slug: string }) {
   const art = getArtwork(slug)
   useEffect(() => {
     window.scrollTo(0, 0)
-    if (art) document.title = `${art.title} — Elena Ravel`
+    if (art) document.title = `${art.title} — ${artist.name}`
     return () => {
-      document.title = 'Elena Ravel — Original Paintings'
+      document.title = `${artist.name} — Original Paintings`
     }
   }, [art])
 

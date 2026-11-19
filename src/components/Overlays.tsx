@@ -26,7 +26,7 @@ export function InquiryModal() {
       ...f,
       topic: art ? 'purchase' : 'commission',
       message: art
-        ? `Hello Elena, I'm interested in “${art.title}” (${art.year}). Could you tell me more about ${art.availability === 'sold' ? 'similar available works or a commission' : 'shipping and framing'}?`
+        ? `Hello ${artist.firstName}, I'm interested in “${art.title}” (${art.year}). Could you tell me more about ${art.availability === 'sold' ? 'similar available works or a commission' : 'shipping and framing'}?`
         : '',
     }))
   }, [open, art])

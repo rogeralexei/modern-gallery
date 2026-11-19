@@ -1,15 +1,15 @@
 /** Everything about the artist lives here — edit freely. */
 export const artist = {
-  name: 'Elena Ravel',
-  firstName: 'Elena',
-  lastName: 'Ravel',
-  monogram: 'ER',
+  name: 'Olga Sinclair',
+  firstName: 'Olga',
+  lastName: 'Sinclair',
+  monogram: 'OS',
   based: 'Lisbon, Portugal',
   tagline: 'Paintings of light, water and quiet places.',
   statement:
     'I paint the moments just before a place changes — the last minute of blue on a river, the hour a hill turns gold. Each work is made slowly, in layers, so that it keeps changing as the light in your room does.',
   bio: [
-    'Elena Ravel (b. 1988) is a painter working between Lisbon and the Alentejo coast. Trained in printmaking before turning to oil, she builds her paintings in thin, translucent layers over weeks or months, often returning to the same view across a full season.',
+    'Olga Sinclair (b. 1988) is a painter working between Lisbon and the Alentejo coast. Trained in printmaking before turning to oil, she builds her paintings in thin, translucent layers over weeks or months, often returning to the same view across a full season.',
     'Her work moves freely between observed landscape and abstraction, held together by an obsession with atmosphere — fog, glare, reflected light and the colour of air.',
   ],
   philosophy:
@@ -45,10 +45,10 @@ export const artist = {
     { year: 2022, title: 'Residency', venue: 'Atelier Résidence, Paris', kind: 'Residency' },
   ],
   contact: {
-    email: 'studio@elenaravel.art',
+    email: 'studio@olgasinclair.art',
     phone: '+351 912 345 678',
     studio: 'Rua das Flores 42, 1200-195 Lisboa',
     instagram: 'https://instagram.com/',
-    instagramHandle: '@elenaravel.studio',
+    instagramHandle: '@olgasinclair.studio',
   },
 } as const

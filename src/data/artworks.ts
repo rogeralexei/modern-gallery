@@ -59,7 +59,7 @@ const img = (slug: string) => ({
 
 export const artworks: Artwork[] = [
   {
-    id: 'er-001',
+    id: 'os-001',
     slug: 'blue-hour',
     title: 'Blue Hour, Upriver',
     year: 2025,
@@ -85,7 +85,7 @@ export const artworks: Artwork[] = [
     imageCredit: 'Placeholder: Claude Monet, public domain',
   },
   {
-    id: 'er-002',
+    id: 'os-002',
     slug: 'ember-tide',
     title: 'Ember Tide',
     year: 2025,
@@ -111,7 +111,7 @@ export const artworks: Artwork[] = [
     imageCredit: 'Placeholder: J. M. W. Turner, public domain',
   },
   {
-    id: 'er-003',
+    id: 'os-003',
     slug: 'weather-study',
     title: 'Weather Study No. 4',
     year: 2024,
@@ -135,7 +135,7 @@ export const artworks: Artwork[] = [
     imageCredit: 'Placeholder: J. M. W. Turner, public domain',
   },
   {
-    id: 'er-004',
+    id: 'os-004',
     slug: 'parnassus-light',
     title: 'Parnassus Light',
     year: 2024,
@@ -161,7 +161,7 @@ export const artworks: Artwork[] = [
     imageCredit: 'Placeholder: Paul Klee, public domain',
   },
   {
-    id: 'er-005',
+    id: 'os-005',
     slug: 'quiet-city',
     title: 'Quiet City in Red',
     year: 2023,
@@ -185,7 +185,7 @@ export const artworks: Artwork[] = [
     imageCredit: 'Placeholder: Paul Klee, public domain',
   },
   {
-    id: 'er-006',
+    id: 'os-006',
     slug: 'yellow-hill',
     title: 'The Yellow Hill',
     year: 2025,
@@ -211,7 +211,7 @@ export const artworks: Artwork[] = [
     imageCredit: 'Placeholder: Wassily Kandinsky, public domain',
   },
   {
-    id: 'er-007',
+    id: 'os-007',
     slug: 'grid-for-a-morning',
     title: 'Grid for a Morning',
     year: 2023,
@@ -236,7 +236,7 @@ export const artworks: Artwork[] = [
     imageCredit: 'Placeholder: Piet Mondrian, public domain',
   },
   {
-    id: 'er-008',
+    id: 'os-008',
     slug: 'birch-silence',
     title: 'Birch Silence',
     year: 2025,
@@ -261,7 +261,7 @@ export const artworks: Artwork[] = [
     imageCredit: 'Placeholder: Gustav Klimt, public domain',
   },
   {
-    id: 'er-009',
+    id: 'os-009',
     slug: 'villas-at-the-water',
     title: 'Villas at the Water',
     year: 2024,
@@ -286,7 +286,7 @@ export const artworks: Artwork[] = [
     imageCredit: 'Placeholder: Gustav Klimt, public domain',
   },
   {
-    id: 'er-010',
+    id: 'os-010',
     slug: 'afternoon-meadow',
     title: 'Afternoon by the Seine',
     year: 2024,
@@ -310,7 +310,7 @@ export const artworks: Artwork[] = [
     imageCredit: 'Placeholder: Alfred Sisley, public domain',
   },
   {
-    id: 'er-011',
+    id: 'os-011',
     slug: 'red-amaryllis',
     title: 'Red Amaryllis',
     year: 2025,
@@ -334,7 +334,7 @@ export const artworks: Artwork[] = [
     imageCredit: 'Placeholder: Piet Mondrian, public domain',
   },
   {
-    id: 'er-012',
+    id: 'os-012',
     slug: 'ochre-quarry',
     title: 'Ochre Quarry',
     year: 2023,

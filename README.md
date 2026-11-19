@@ -1,4 +1,4 @@
-# Elena Ravel — Original Paintings
+# Olga Sinclair — Original Paintings
 
 An immersive gallery and shop for an independent painter, built with Vite, React, TypeScript, Tailwind CSS v4, Motion and React Three Fiber.
 

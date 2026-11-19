@@ -59,7 +59,7 @@ export const mockProvider: PaymentProvider = {
   async createCheckout(order) {
     await wait(1600)
     if (!order.lines.length) return { ok: false, error: 'Your cart is empty.' }
-    const id = 'ER-' + Math.random().toString(36).slice(2, 8).toUpperCase()
+    const id = 'OS-' + Math.random().toString(36).slice(2, 8).toUpperCase()
     return { ok: true, orderId: id }
   },
 }

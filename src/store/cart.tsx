@@ -15,7 +15,7 @@ type Action =
   | { type: 'setQty'; artworkId: string; variant: Variant; qty: number }
   | { type: 'clear' }
 
-const STORAGE_KEY = 'er-cart-v1'
+const STORAGE_KEY = 'os-cart-v1'
 
 /** Originals are one-of-a-kind; prints are capped by remaining edition. */
 export const maxQty = (art: Artwork, variant: Variant) =>
