@@ -1,0 +1,175 @@
+@import 'tailwindcss';
+
+/* ───────────────────────── Design tokens ───────────────────────── */
+@theme {
+  --color-ivory: #f4efe6;
+  --color-paper: #ebe4d8;
+  --color-bone: #e2d9ca;
+  --color-ink: #1f1d1a;
+  --color-ink-soft: #4a4640;
+  --color-mute: #857d71;
+  --color-line: rgb(31 29 26 / 0.12);
+  --color-clay: #9a5b3c;
+  --color-clay-soft: #c08a6b;
+  --color-sage: #6f7865;
+  --color-moss: #3f4537;
+
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --ease-gallery: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@layer base {
+  html {
+    background: var(--color-ivory);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-ivory);
+  }
+  :focus-visible {
+    outline: 1.5px solid var(--color-clay);
+    outline-offset: 3px;
+  }
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+}
+
+/* Paper grain — a single fixed layer, no repaint cost on scroll */
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ───────────────────────── Typography helpers ───────────────────────── */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-mute);
+}
+.display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+
+/* ───────────────────────── Gallery frames ─────────────────────────
+   Built from layered borders + inset shadows so they scale crisply and
+   cost nothing to render. `--frame` is the moulding colour. */
+.frame {
+  --frame: #2a2622;
+  --frame-hi: rgb(255 255 255 / 0.10);
+  --frame-lo: rgb(0 0 0 / 0.35);
+  position: relative;
+  padding: var(--frame-w, 14px);
+  background:
+    linear-gradient(135deg, var(--frame-hi), transparent 40%, var(--frame-lo)),
+    var(--frame);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.06),
+    inset 2px 2px 3px rgb(255 255 255 / 0.12),
+    inset -2px -2px 4px rgb(0 0 0 / 0.35),
+    0 1px 1px rgb(0 0 0 / 0.08),
+    0 12px 24px -8px rgb(40 30 20 / 0.30),
+    0 40px 80px -24px rgb(40 30 20 / 0.35);
+}
+.frame--oak {
+  --frame: #b38a5c;
+  --frame-hi: rgb(255 240 210 / 0.35);
+  --frame-lo: rgb(70 40 10 / 0.35);
+}
+.frame--walnut {
+  --frame: #4b3424;
+}
+.frame--black {
+  --frame: #1c1a18;
+}
+.frame--white {
+  --frame: #efebe4;
+  --frame-hi: rgb(255 255 255 / 0.8);
+  --frame-lo: rgb(0 0 0 / 0.12);
+}
+.frame--gilt {
+  --frame: #a88a52;
+  --frame-hi: rgb(255 236 180 / 0.55);
+  --frame-lo: rgb(60 40 10 / 0.45);
+}
+/* The mat / fillet between moulding and canvas */
+.frame__mat {
+  padding: var(--mat-w, 0px);
+  background: #f7f3ec;
+  box-shadow: inset 1px 1px 3px rgb(0 0 0 / 0.25);
+}
+.frame__canvas {
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.08);
+}
+/* subtle glass/varnish sheen that tracks pointer via CSS vars */
+.frame__canvas::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    120% 80% at var(--sx, 30%) var(--sy, 0%),
+    rgb(255 255 255 / 0.16),
+    transparent 55%
+  );
+  mix-blend-mode: soft-light;
+}
+
+/* Gallery wall light cone */
+.wall-light {
+  background: radial-gradient(60% 50% at 50% 0%, rgb(255 248 235 / 0.9), transparent 70%);
+}
+
+/* Utility: hide scrollbars for horizontal rails while keeping them scrollable */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Underline micro-interaction */
+.link-line {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  transition: background-size 0.5s var(--ease-gallery);
+}
+.link-line:hover,
+.link-line:focus-visible {
+  background-size: 100% 1px;
+  background-position: 0% 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
